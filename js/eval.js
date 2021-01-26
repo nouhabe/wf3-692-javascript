@@ -3,11 +3,10 @@ var fruitsLegumes = ["orange","tomato","fraise","framboise","pomme","poire","con
 var panier = [];
 
 
-for( i = 0 ; i < fruitsLegumes.length ; i++){
-    panier.push(fruitsLegumes[i]);
-    fruitsLegumes.shift();
-   
-   i--;
+for(var i = fruitsLegumes.length-1; i >= 0; i--){
+    var fruitRemoved = fruitsLegumes.shift();
+    console.log("fruitRemoved: ",fruitRemoved);
+    panier.push(fruitRemoved);
 }
 console.log('fruitsLegumes', fruitsLegumes);
 console.log('panier', panier);

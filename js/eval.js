@@ -1,19 +1,9 @@
 var fruitsLegumes = ["orange","tomato","fraise","framboise","pomme","poire","concombre","aubergine",
 "carotte","kiwi","ananas","banane"];
 var panier = [];
-// j=0;
-// for( i = 0 ; i < fruitsLegumes.length ; i++ ){
-//     // console.log(fruitsLegumes[i]);
-//     panier.push(fruitsLegumes[i]);
-//      fruitsLegumes.splice(j,1);
-//    j++;
-//     // console.log(panier);
-//     console.log(fruitsLegumes);
-// }
+
 
 for( i = 0 ; i < fruitsLegumes.length ; i++){
-    // console.log(fruitsLegumes[i]);
-    // console.log(i);
     panier.push(fruitsLegumes[i]);
     fruitsLegumes.shift();
    
@@ -23,20 +13,27 @@ console.log('fruitsLegumes', fruitsLegumes);
 console.log('panier', panier);
 
 
-// var panier2 = [
-//     {nom =" orange", prix = 3},
-//     {nom =" fraise", prix = 4},
-//     {nom =" orange", prix = 3},
-//     {nom =" fraise", prix = 4}
-// ] ;
-// var prixTotalsFruitsLegumes = [];
-// var quantité =
-// var resultat = function(panier){
-//     for(var article in panier2){
+
+
+
+var panier2 =[
+    {nom :"fraise", prix : 4, quantite:2},
+    {nom :"orange", prix : 3, quantite:3},
+    {nom :"banane", prix : 5, quantite:2}
+] 
+ ;
+// console.log(panier2);
+var prixTotalsFruitsLegumes = [];
+ for(i=0; i<panier2.length; i++){
         
-//         let prixTotal = prix * Object.size(panier);
-//         return prixTotal;
-//     }
-//     prixTotalsFruitsLegumes.push(prixTotal) 
-// }
-   
+    var prixTotal  = panier2[i].prix * panier2[i].quantite;
+    prixTotalsFruitsLegumes.push( prixTotal ); 
+}             
+    console.log(prixTotalsFruitsLegumes);
+
+
+var resultat=0 ;
+for(tot of prixTotalsFruitsLegumes){
+    resultat +=tot;
+}
+console.log(resultat);

@@ -1,4 +1,5 @@
 window.onload = function(){
+    var maBalise = document.querySelector('body');
     
 
     var monElementHtml = function(element){
@@ -8,11 +9,10 @@ window.onload = function(){
         return elHtml;
    }
 
-   var monH1 = monElementHtml('h1')
-   var maBalise = document.querySelector('body');
+   var monH1 = monElementHtml('h1');
+   monH1.innerText= "bienvenue dans ma page !!!";
    maBalise.appendChild(monH1);
    
-   monH1.innerText= "bienvenue dans ma page !!!";
    var divNom = monElementHtml('div');
    divNom.setAttribute('class', 'square');
    var monNom = monElementHtml('p');
@@ -23,44 +23,37 @@ window.onload = function(){
 
 var balises = ["p","div","span","section"];
 function plusieuresBalise (balises){
- for( i=0 ; i< balises.length; i++){
-    var elementHtml = monElementHtml(balises[i]); 
-    maBalise.appendChild(elementHtml);   
-      
-            
-     }   
+    for(var elementTagName of balises){
+        var elementHtml = monElementHtml(elementTagName);
+        maBalise.appendChild(elementHtml);
+    }
  }
-   plusieuresBalise(balises);
+plusieuresBalise(balises);
 
-
-
-function childElement(balises){
-    for( i=0 ; i<balises.length ; i++){
-        var enfantP = monElementHtml ("p") ; 
-        
-        var child = document.querySelector(balises[i]);
-        child.appendChild(enfantP); 
-        console.log(child);   
+function childElementParagraphe(balises){
+    for(var elementTagName of balises){
+        var childP = monElementHtml ("p"); 
+        var parent = document.querySelector(elementTagName);
+        parent.appendChild(childP); 
+        console.log(parent);  
     }
 }
 
-childElement(balises);
+childElementParagraphe(balises);
 
-function createElement3 (){
-    for(i=0 ; i<3 ; i++){
+function createElement3 (arrayOfParagraphe){
+    for(i=0 ; i< arrayOfParagraphe.length ; i++){
         var createDiv = monElementHtml ("div") ; 
-        var createEnfant = monElementHtml ("p")
+        var createEnfant = monElementHtml ("p");
         createDiv.setAttribute('id', 'div'+(i+1));
         createDiv.setAttribute('class', 'square');
         createDiv.setAttribute('class','square color'+(i+1));
-        maBalise.appendChild(createDiv);
-        createDiv.appendChild(createEnfant);
         createEnfant.setAttribute('class', 'paragraphe'+(i+1));
-        createEnfant.innerText ="maparagraphe numéro"+(i+1)
+        createEnfant.innerText = arrayOfParagraphe[i];
         console.log(createDiv);
     }
 }
-createElement3();
+createElement3(["maparagraphe numéro 1", "maparagraphe numéro 2", "maparagraphe numéro 3", "maparagraphe numéro 4"]);
 
 
 

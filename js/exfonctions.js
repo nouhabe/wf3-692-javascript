@@ -45,9 +45,9 @@ function childElement(balises){
 }
 
 childElement(balises);
-
-function createElement3 (){
-    for(i=0 ; i<3 ; i++){
+// var numberTags = document.querySelector('input') ; 
+function createElement3 (numberTags){
+    for(i=0 ; i<numberTags ; i++){
         var createDiv = monElementHtml ("div") ; 
         var createEnfant = monElementHtml ("p")
         createDiv.setAttribute('id', 'div'+(i+1));
@@ -60,7 +60,7 @@ function createElement3 (){
         console.log(createDiv);
     }
 }
-createElement3();
+createElement3(2);
 
 
 
@@ -77,5 +77,5 @@ createElement3();
 
 }
 
-
+export { monElementHtml , maBalise  }
 

@@ -1,0 +1,23 @@
+body {
+    width: 950 px;
+    background-color: aquamarine;
+    text-align: center;
+    
+    
+}
+.container {
+    padding-left: 30px;
+   
+    border-color: black;
+    text-align: center;
+    
+}
+.carte {
+    background-image: url(https://via.placeholder.com/150.png?text=Mistery+card);
+    margin: 10px;
+    width: 150px;
+    height:150px ;
+    float: left;
+    cursor: pointer;
+
+}

@@ -13,11 +13,14 @@ body {
     
 }
 .carte {
-    /* background-image: url(https://via.placeholder.com/150.png?text=Mistery+card); */
+    
     margin: 10px;
     width: 150px;
     height:150px ;
     float: left;
     cursor: pointer;
+    font-size:500px;
+   
+
 
 }
